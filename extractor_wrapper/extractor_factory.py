@@ -59,15 +59,15 @@ class ExtractorFactory:
             return UnsupportedExtractor()
 
     @staticmethod
-    def auto_extract(file_path: str) -> str:
+    def auto_extract(file_path: str, safe_read: bool = False) -> str:
         """
         Automatically extract content from a file using the appropriate extractor.
 
         Args:
             file_path (str): The full path to the file.
-
+            safe_read (bool): If True, suppresses FileNotFoundError and returns an empty string.
         Returns:
             str: Extracted text content.
         """
         extractor: BaseExtractor = ExtractorFactory.get_extractor(file_path)
-        return extractor.extract(file_path)
+        return extractor.extract(file_path, safe_read=safe_read)
