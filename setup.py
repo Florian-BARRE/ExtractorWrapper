@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="extractor_wrapper",
-    version="0.1.0",
+    version="0.1.1",
     author="Florian BARRE",
     author_email="florian.barre78@gmail.com",
     description="",
