@@ -58,6 +58,8 @@ class MSGExtractor(BaseExtractor):
                 f"Date: {msg_date}\n\n"
                 f"{msg_body}"
             )
+
+            msg.close()
             return result
 
         except FileNotFoundError:
